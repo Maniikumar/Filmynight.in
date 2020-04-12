@@ -1,0 +1,249 @@
+"use strict";
+$(function() {
+    $(".preloader").fadeOut();
+});
+
+$(document).ready(function(){
+
+    $('.nav-link').on('click', function () {
+        $(this).closest('ul').find('li a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('body').css('display', 'none');
+    $('body').fadeIn(1500);
+
+    $(".toggle-slide a").on('click', function(){
+        $(this).toggleClass('active');
+        $("#menu").toggleClass("hide-menu");
+        $(".main-cont").toggleClass("full-width-content");
+        $(".logo").toggleClass("logo-hide");
+    });
+
+    $(".icon-menuu a").on('click', function(){
+        $(this).toggleClass('active');
+        $("#menu").toggleClass("icon-nav");
+        $(".main-cont").toggleClass("icon-width-content");
+        $(".logo").toggleClass("hidden");
+        $(".toggle-slide").toggleClass("hidden");
+        $("#menu ul li ul").removeClass("in");
+        $("#menu ul li").removeClass("active");
+
+        if($("#menu").hasClass("hide-menu")){
+            $("#menu").removeClass("hide-menu");
+        };
+        if($(".logo").hasClass("logo-hide")){
+            $(".logo").removeClass("logo-hide");
+        }
+        if($(".toggle-slide a").hasClass("active")){
+            $(".toggle-slide a").removeClass("active");
+        }
+        if($(".main-cont").hasClass("full-width-content")){
+            $(".main-cont").removeClass("full-width-content");
+        }
+    });
+
+    $(".submit-buttom").click(function(){
+        if($(".add-task input").val() != ''){
+            var inputValue = $(".add-task input").val();
+            $( ".task-list" ).append( "<li><div class='task-check'><label><input type='checkbox'/></label><span>" + inputValue + "<i class='time-stat'>Just now</i></span></div>" );
+
+        }
+
+    });
+
+    $(".myadmin-alert .closed").click(function(event){
+        $(this).parents(".myadmin-alert").fadeToggle(350);
+
+        return false;
+    });
+
+    /* Click to close */
+
+    $(".myadmin-alert-click").click(function(event){
+        $(this).fadeToggle(350);
+
+        return false;
+    });
+
+    $("#showtop").click(function(){
+        $("#alerttop").fadeToggle(350);
+    });
+
+
+    /** Alert Position Bottom  **/
+
+    $("#showbottom").click(function(){
+        $("#alertbottom").fadeToggle(350);
+    });
+
+
+    /** Alert Position Top Left  **/
+
+    $("#showtopleft").click(function(){
+        $("#alerttopleft").fadeToggle(350);
+    });
+
+
+    /** Alert Position Top Right  **/
+
+    $("#showtopright").click(function(){
+        $("#alerttopright").fadeToggle(350);
+    });
+
+
+    /** Alert Position Bottom Left  **/
+
+    $("#showbottomleft").click(function(){
+        $("#alertbottomleft").fadeToggle(350);
+    });
+
+
+    /** Alert Position Bottom Right  **/
+
+    $("#showbottomright").click(function(){
+        $("#alertbottomright").fadeToggle(350);
+    });
+
+    /** panels collapse and close*/
+
+    (function($, window, document){
+        var panelSelector = '[data-perform="panel-collapse"]';
+
+        $(panelSelector).each(function() {
+            var $this = $(this),
+                parent = $this.closest('.panel'),
+                wrapper = parent.find('.panel-wrapper'),
+                collapseOpts = {toggle: false};
+
+            if( ! wrapper.length) {
+                wrapper =
+                    parent.children('.panel-heading').nextAll()
+                        .wrapAll('<div/>')
+                        .parent()
+                        .addClass('panel-wrapper');
+                collapseOpts = {};
+            }
+            wrapper
+                .collapse(collapseOpts)
+                .on('hide.bs.collapse', function() {
+                    $this.children('i').removeClass('ti-minus').addClass('ti-plus');
+                })
+                .on('show.bs.collapse', function() {
+                    $this.children('i').removeClass('ti-plus').addClass('ti-minus');
+                });
+        });
+        $(document).on('click', panelSelector, function (e) {
+            e.preventDefault();
+            var parent = $(this).closest('.panel');
+            var wrapper = parent.find('.panel-wrapper');
+            wrapper.collapse('toggle');
+        });
+    }(jQuery, window, document));
+
+    // Remove Panels
+
+    (function($, window, document){
+        var panelSelector = '[data-perform="panel-dismiss"]';
+        $(document).on('click', panelSelector, function (e) {
+            e.preventDefault();
+            var parent = $(this).closest('.panel');
+            removeElement();
+
+            function removeElement() {
+                var col = parent.parent();
+                parent.remove();
+                col.filter(function() {
+                    var el = $(this);
+                    return (el.is('[class*="col-"]') && el.children('*').length === 0);
+                }).remove();
+            }
+        });
+    }(jQuery, window, document));
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+
+
+
+
+    /*Clock script*/
+    var chart;
+    var sArrow;
+    var mArrow;
+    var hArrow;
+    AmCharts.ready(function () {
+
+        chart = new AmCharts.AmAngularGauge();
+        chart.startDuration = 0.3;
+        var axis = new AmCharts.GaugeAxis();
+        axis.startValue = 0;
+        axis.endValue = 12;
+        axis.valueInterval = 1;
+        axis.minorTickInterval = 0.2;
+        axis.showFirstLabel = false;
+        axis.startAngle = 0;
+        axis.endAngle = 360;
+        axis.axisAlpha = 0.3;
+        chart.addAxis(axis);
+        hArrow = new AmCharts.GaugeArrow();
+        hArrow.radius = "50%";
+        hArrow.clockWiseOnly = true;
+        mArrow = new AmCharts.GaugeArrow();
+        mArrow.radius = "80%";
+        mArrow.startWidth = 6;
+        mArrow.nailRadius = 0;
+        mArrow.clockWiseOnly = true;
+        sArrow = new AmCharts.GaugeArrow();
+        sArrow.radius = "90%";
+        sArrow.startWidth = 3;
+        sArrow.nailRadius = 4;
+        sArrow.color = "#CC0000";
+        sArrow.clockWiseOnly = true;
+        updateClock();
+        chart.addArrow(hArrow);
+        chart.addArrow(mArrow);
+        chart.addArrow(sArrow);
+        chart.write("clockdiv");
+        setInterval(updateClock, 1000);
+    });
+    function updateClock() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        hArrow.setValue(hours + minutes / 60);
+        mArrow.setValue(12 * (minutes + seconds / 60) / 60);
+        sArrow.setValue(12 * date.getSeconds() / 60);
+    }
+
+    $('#data-table').DataTable();
+
+
+
+});
+
+$("[data-toggle=popover]").popover();
+$("[data-toggle=tooltip]").tooltip();
+
+$("#nav-menu").metisMenu();
+Waves.attach('.wave-btn');
+Waves.init();
+
+
+
+
+$('#menu').perfectScrollbar();
+$('#menu1').perfectScrollbar();
+$('#menu2').perfectScrollbar();
+$('#menu3').perfectScrollbar();
+$('#menu4').perfectScrollbar();
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://mediapro.aamish.net/admin/dashboard -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Media Pro - Dashboard</title>
+    <link rel="stylesheet" href="./Media Pro - Dashboard_files/iconist.min.css">
+    <link rel="stylesheet" href="./Media Pro - Dashboard_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Media Pro - Dashboard_files/waves.min.css">
+    <link rel="stylesheet" href="./Media Pro - Dashboard_files/metisMenu.css">
+    <!--Page style-->
+    <link rel="stylesheet" href="./Media Pro - Dashboard_files/amcharts.min.css">
+    <link rel="stylesheet" href="./Media Pro - Dashboard_files/scrollbar.css">
+    <link rel="stylesheet" href="./Media Pro - Dashboard_files/dataTables.min.css">
+        <link rel="stylesheet" href="./Media Pro - Dashboard_files/style.css">
+    <link rel="icon" href="http://mediapro.aamish.net/images/fav.png" type="image/x-icon">
+</head>
+<body style="">
+<header>
+    <div class="logo pull-left">
+        <a href="http://mediapro.aamish.net/admin/dashboard">
+            <span class="logo-default">Admin Panel</span>
+        </a>
+    </div>
+    <div class="toggle-slide pull-left">
+        <a href="http://mediapro.aamish.net/admin/dashboard#" class="wave-btn waves-effect">
+            <span class="third"></span>
+            <span class="second"></span>
+            <span class="first"></span>
+        </a>
+    </div>
+
+    <div class="top-navigation pull-right">
+        <ul class="nav navbar-nav navbar-right">
+
+            <!--visit site-->
+            <li class="dropdown hidden-xs">
+                <a href="http://mediapro.aamish.net/" target="_blank" data-toggle="tooltip" title="" data-original-title="Visit Site">
+                    <i class="mdi mdi-launch">
+
+                    </i>
+                </a>
+            </li>
+
+            <!--Admin Dropdown start here-->
+            <li class="dropdown noMargin visible-lg" id="admin-menu">
+                <a href="http://mediapro.aamish.net/admin/dashboard#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <img src="./Media Pro - Dashboard_files/default-avatar.jpg" alt="avatar" class="img-responsive">
+                    
+                    <span>Jhon</span>
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu topbar-dropdown profile-dropdown">
+                    <li>
+                        <a href="http://mediapro.aamish.net/user/admin" target="_blank">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <strong>My Profile</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://mediapro.aamish.net/admin/settings">
+                            <i class="fa fa-gear" aria-hidden="true"></i>
+                            <strong>Settings</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://mediapro.aamish.net/logout" onclick="event.preventDefault();
+                                    document.getElementById(&#39;logout-form&#39;).submit();">
+                            <i class="fa fa-power-off" aria-hidden="true"></i>
+                            <strong>Log out</strong>
+                        </a>
+                        <form id="logout-form" action="http://mediapro.aamish.net/logout" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="BjBhTBzgzD0pazpExlYc5BiyZNp1tyIsHJcNAK73">
+                        </form>
+
+                    </li>
+                </ul>
+            </li>
+            <!--Admin drop down end here-->
+        </ul>
+    </div>
+</header>
+
+<!--Sidebar Navigation-->
+<nav id="menu" class="ps-container ps-theme-default ps-active-y" data-ps-id="4b51bea1-26d5-0088-3149-0e8de3a79f88">
+    <ul class="list-unstyled metismenu" id="nav-menu">
+        <li class="list-heading">Main</li>
+        <li class="active">
+            <a class="collapsible wave-btn waves-effect" href="http://mediapro.aamish.net/admin/dashboard">
+                <i class="ion-ios-home icon"></i>
+                <span>Dashboard </span>
+
+            </a>
+        </li>
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="javascript:;">
+                <i class="mdi mdi-movie icon"></i>
+                <span>Media</span>
+                <i class="fa fa-chevron-down arrow"></i>
+            </a>
+            <ul class="collapse" aria-expanded="false">
+                <li>
+                    <a class="wave-btn  waves-effect" href="http://mediapro.aamish.net/admin/media">
+                        <i class="mdi mdi-view-list icon-setting"></i>
+                        <span>Media List</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="wave-btn  waves-effect" href="http://mediapro.aamish.net/admin/media/create">
+                        <i class="mdi mdi-plus-network icon-setting"></i>
+                        <span>Add Media</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="javascript:;">
+                <i class="mdi mdi-alphabetical icon"></i>
+                <span>Subtitles</span>
+                <i class="fa fa-chevron-down arrow"></i>
+            </a>
+            <ul class="collapse" aria-expanded="false">
+                <li>
+                    <a class="wave-btn  waves-effect" href="http://mediapro.aamish.net/admin/subtitles">
+                        <i class="mdi mdi-view-list icon-setting"></i>
+                        <span>Subtitles List</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="wave-btn  waves-effect" href="http://mediapro.aamish.net/admin/subtitles/create">
+                        <i class="mdi mdi-plus-network icon-setting"></i>
+                        <span>Add Subtitle</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="http://mediapro.aamish.net/admin/pending/links">
+                <i class="mdi mdi-paperclip icon"></i>
+                <span>Links Pending Approval <small class="label label-primary">2</small></span>
+
+            </a>
+        </li>
+
+
+
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="http://mediapro.aamish.net/admin/ads">
+                <i class="mdi mdi-source-fork icon"></i>
+                <span>Ads Management</span>
+
+            </a>
+        </li>
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="http://mediapro.aamish.net/admin/searches">
+                <i class="mdi mdi-magnify icon"></i>
+                <span>Searches</span>
+            </a>
+        </li>
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="http://mediapro.aamish.net/admin/collection">
+                <i class="mdi mdi-folder icon"></i>
+                <span>Collection</span>
+            </a>
+        </li>
+
+        <li class="list-heading">Management</li>
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="http://mediapro.aamish.net/admin/pages">
+                <i class="mdi mdi-content-copy icon"></i>
+                <span>Pages</span>
+
+            </a>
+        </li>
+        <li>
+            <a class="collapsible wave-btn waves-effect" href="http://mediapro.aamish.net/admin/users">
+                <i class="fa fa-user icon"></i>
+                <span>Users</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://mediapro.aamish.net/admin/settings" class="wave-btn waves-effect">
+                <i class="ion-ios-cog icon"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+
+        <li class="list-heading">Help</li>
+        <li class="project">
+            <div class="for-help">
+                <span>Need Help?</span>
+            </div>
+            <div class="email">
+                <span>Email:</span>
+                <p>nd_sohail@yahoo.com</p>
+            </div>
+        </li>
+    </ul>
+
+<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 754px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 689px;"></div></div></nav>
+<!--Sidebar Navigation end here-->
+
+<!--Main content-->
+<div class="main-cont">
+        <div class="row">
+        <!--Profit widget-->
+        <div class="col-sm-6 col-md-3">
+            <div class="widgets">
+                <div class="widget-header info text-center"></div>
+                <div class="widget-content">
+                    <i class="icon-wallet"></i>
+                    <div class="detail-info pull-left">
+                        <div class="widget-title profit-icon">
+                            <i class="mdi mdi-account-plus"></i>
+                        </div>
+                        <h2 class="widget-title info-title">10</h2>
+                        <span>Total Users</span>
+                    </div>
+
+                    <span class="clearfix"></span>
+                </div>
+            </div>
+        </div>
+        <!--Profit widget end here-->
+
+        <!--Profit widget-->
+        <div class="col-sm-6 col-md-3">
+            <div class="widgets">
+                <div class="widget-header success text-center"></div>
+                <div class="widget-content">
+                    <i class="icon-basket-loaded"></i>
+                    <div class="detail-info pull-left">
+                        <div class="widget-title profit-icon">
+                            <i class="mdi mdi-magnify"></i>
+                        </div>
+                        <h2 class="widget-title success-title">27</h2>
+                        <span>Total Searches</span>
+                    </div>
+                    <span class="clearfix"></span>
+                </div>
+            </div>
+        </div>
+        <!--Profit widget end here-->
+
+        <!--Profit widget-->
+        <div class="col-sm-6 col-md-3">
+            <div class="widgets">
+                <div class="widget-header warning text-center"></div>
+                <div class="widget-content">
+                    <i class="icon-user-follow"></i>
+                    <div class="detail-info pull-left">
+                        <div class="widget-title profit-icon">
+                            <i class="mdi mdi-lightbulb-outline"></i>
+                        </div>
+                        <h2 class="widget-title warning-title">0</h2>
+                        <span>Items in Collection</span>
+                    </div>
+                    <span class="clearfix"></span>
+                </div>
+            </div>
+        </div>
+        <!--Profit widget end here-->
+
+        <!--Profit widget-->
+        <div class="col-sm-6 col-md-3">
+            <div class="widgets">
+                <div class="widget-header danger text-center"></div>
+                <div class="widget-content">
+                    <i class="icon-graph"></i>
+                    <div class="detail-info pull-left">
+                        <div class="widget-title profit-icon">
+                            <i class="mdi mdi-message"></i>
+                        </div>
+                        <h2 class="widget-title danger-title">13</h2>
+                        <span>Total Reviews</span>
+                    </div>
+                    <span class="clearfix"></span>
+                </div>
+            </div>
+        </div>
+        <!--Profit widget end here-->
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 col-md-9 ">
+            <div class="chart-row">
+                <div class="content-widget-title">
+                    Searches Per Day
+                </div>
+                <canvas id="chart1" style="padding: 5px 8px; width: 906px; height: 315px;" height="393" width="1132"></canvas>
+
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <div class="time-stamp">
+
+                <div class="weather-detecter">
+                    <div id="clockdiv" style="width: 100%; height: 150px; overflow: hidden; text-align: left;"><div class="amcharts-main-div" style="position: relative;"><div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 282px; height: 150px; padding: 0px; touch-action: auto;"><svg version="1.1" style="position: absolute; width: 282px; height: 150px; top: 0px; left: -0.0999756px;"><desc>JavaScript chart by amCharts 3.20.9</desc><g><path cs="100,100" d="M0.5,0.5 L281.5,0.5 L281.5,149.5 L0.5,149.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" aria-label="7.8"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><g><path cs="1000,1000" d=" M141,14 L141,13 A62,62,0,1,1,140.9350737636924,13.000033995300939 L140.9361209610522,14.000033446989633 A61,61,0,1,0,141,14 Z" fill="#000000" fill-opacity="0.3" stroke-width="0" stroke-opacity="0"></path></g><path cs="100,100" d="M141.5,13.75 L141.5,23.75" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M147.95463,14.08827 L147.43199,19.06088" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M154.33855,15.09939 L153.29899,19.99012" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M160.5818,16.77226 L159.03671,21.52754" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M166.61599,19.08857 L164.5823,23.6563" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M172.375,22.02293 L167.375,30.68319" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(160,45)"><tspan y="6" x="0">1</tspan></text><path cs="100,100" d="M177.79574,25.5432 L174.85681,29.58829" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M182.81881,29.61081 L179.47316,33.32653" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M187.38919,34.18119 L183.67347,37.52684" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M191.4568,39.20426 L187.41171,42.14319" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M194.97707,44.625 L186.31681,49.625" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(174,58)"><tspan y="6" x="0">2</tspan></text><path cs="100,100" d="M197.91143,50.38401 L193.3437,52.4177" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M200.22774,56.4182 L195.47246,57.96329" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M201.90061,62.66145 L197.00988,63.70101" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M202.91173,69.04537 L197.93912,69.56801" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M203.25,75.5 L193.25,75.5" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(179,75)"><tspan y="6" x="0">3</tspan></text><path cs="100,100" d="M202.91173,81.95463 L197.93912,81.43199" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M201.90061,88.33855 L197.00988,87.29899" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M200.22774,94.5818 L195.47246,93.03671" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M197.91143,100.61599 L193.3437,98.5823" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M194.97707,106.375 L186.31681,101.375" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(174,92)"><tspan y="6" x="0">4</tspan></text><path cs="100,100" d="M191.4568,111.79574 L187.41171,108.85681" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M187.38919,116.81881 L183.67347,113.47316" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M182.81881,121.38919 L179.47316,117.67347" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M177.79574,125.4568 L174.85681,121.41171" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M172.375,128.97707 L167.375,120.31681" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(160,105)"><tspan y="6" x="0">5</tspan></text><path cs="100,100" d="M166.61599,131.91143 L164.5823,127.3437" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M160.5818,134.22774 L159.03671,129.47246" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M154.33855,135.90061 L153.29899,131.00988" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M147.95463,136.91173 L147.43199,131.93912" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M141.5,137.25 L141.5,127.25" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(141,110)"><tspan y="6" x="0">6</tspan></text><path cs="100,100" d="M135.04537,136.91173 L135.56801,131.93912" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M128.66145,135.90061 L129.70101,131.00988" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M122.4182,134.22774 L123.96329,129.47246" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M116.38401,131.91143 L118.4177,127.3437" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M110.625,128.97707 L115.625,120.31681" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(122,105)"><tspan y="6" x="0">7</tspan></text><path cs="100,100" d="M105.20426,125.4568 L108.14319,121.41171" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M100.18119,121.38919 L103.52684,117.67347" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M95.61081,116.81881 L99.32653,113.47316" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M91.5432,111.79574 L95.58829,108.85681" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M88.02293,106.375 L96.68319,101.375" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(108,92)"><tspan y="6" x="0">8</tspan></text><path cs="100,100" d="M85.08857,100.61599 L89.6563,98.5823" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M82.77226,94.5818 L87.52754,93.03671" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M81.09939,88.33855 L85.99012,87.29899" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M80.08827,81.95463 L85.06088,81.43199" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M79.75,75.5 L89.75,75.5" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(103,75)"><tspan y="6" x="0">9</tspan></text><path cs="100,100" d="M80.08827,69.04537 L85.06088,69.56801" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M81.09939,62.66145 L85.99012,63.70101" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M82.77226,56.4182 L87.52754,57.96329" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M85.08857,50.38401 L89.6563,52.4177" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M88.02293,44.625 L96.68319,49.625" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(111,58)"><tspan y="6" x="0">10</tspan></text><path cs="100,100" d="M91.5432,39.20426 L95.58829,42.14319" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M95.61081,34.18119 L99.32653,37.52684" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M100.18119,29.61081 L103.52684,33.32653" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M105.20426,25.5432 L108.14319,29.58829" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M110.625,22.02293 L115.625,30.68319" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(124,45)"><tspan y="6" x="0">11</tspan></text><path cs="100,100" d="M116.38401,19.08857 L118.4177,23.6563" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M122.4182,16.77226 L123.96329,21.52754" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M128.66145,15.09939 L129.70101,19.99012" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M135.04537,14.08827 L135.56801,19.06088" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><path cs="100,100" d="M141.5,13.75 L141.5,23.75" fill="none" stroke-width="1" stroke-opacity="1" stroke="#555555"></path><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(141,40)"><tspan y="6" x="0">12</tspan></text></g><g><circle r="8" cx="0" cy="0" fill="#000000" stroke="#000000" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(141,75)"></circle><path cs="100,100" d="M144.87356578325154,77.6491984333873 L124.91087,101.53971 L124.91087,101.53971 L138.12643,73.3508 Z" fill="#000000" stroke="#000000" fill-opacity="1" stroke-width="1" stroke-opacity="1"></path></g><g><path cs="100,100" d="M139.0099631447139,73.82676467306094 L169.05261,34.49739 L169.05261,34.49739 L143.99004,77.17324 Z" fill="#000000" stroke="#000000" fill-opacity="1" stroke-width="1" stroke-opacity="1"></path></g><g><circle r="4" cx="0" cy="0" fill="#CC0000" stroke="#CC0000" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(141,75)"></circle><path cs="100,100" d="M142.38167787843872,76.71352549156242 L96.53888,108.16617 L96.53888,108.16617 L140.61832,74.28647 Z" fill="#CC0000" stroke="#CC0000" fill-opacity="1" stroke-width="1" stroke-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g><g></g></g><g></g><g></g><g></g><g></g><g></g></svg><a href="http://www.amcharts.com/javascript-charts/" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 5px; top: 5px;"></a></div></div></div>
+
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us" data-label_1="NEW YORK" data-label_2="WEATHER" data-mode="Current" data-theme="original" style="display: block; position: relative; height: 133px; padding: 0px; overflow: hidden; text-align: left; text-indent: -299rem;">NEW YORK WEATHER<iframe id="weatherwidget-io-0" class="weatherwidget-io-frame" title="Weather Widget" scrolling="no" frameborder="0" width="100%" src="./Media Pro - Dashboard_files/saved_resource.html" style="display: block; position: absolute; top: 0px; height: 133px;"></iframe></a>
+                    <script id="weatherwidget-io-js" src="./Media Pro - Dashboard_files/widget.min.js.download"></script><script>
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
+                    </script>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Tasks widget-->
+
+        <!--Project widget-->
+        <div class="col-sm-12">
+            <div class="project-widget">
+                <div class="content-widget-title">
+                    New Users
+                </div>
+
+                <table class="table table-striped dash-table dashboard-table">
+                    <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Reviews</th>
+                        <th>Registered On</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                                            
+                        <tr>
+                                                            <th>
+                                    <img src="./Media Pro - Dashboard_files/default-avatar.jpg" alt="avatar" class="img-responsive">
+                                </th>
+                            
+                            <th class="blue-color">
+                                <a href="http://mediapro.aamish.net/user/madison" target="_blank">
+                                    Madison Oldaker
+                                </a>
+                            </th>
+                            <th>Madison</th>
+                            <th>MadisonOldaker@rhyta.com</th>
+                            <th>1</th>
+                            <th>14-Sep-2018</th>
+                        </tr>
+                                            
+                        <tr>
+                                                            <th>
+                                    <img src="./Media Pro - Dashboard_files/default-avatar.jpg" alt="avatar" class="img-responsive">
+                                </th>
+                            
+                            <th class="blue-color">
+                                <a href="http://mediapro.aamish.net/user/kaitlyn" target="_blank">
+                                    Kaitlyn Marston
+                                </a>
+                            </th>
+                            <th>Kaitlyn</th>
+                            <th>KaitlynMarston@jourrapide.com</th>
+                            <th>4</th>
+                            <th>14-Sep-2018</th>
+                        </tr>
+                                            
+                        <tr>
+                                                            <th>
+                                    <img src="./Media Pro - Dashboard_files/default-avatar.jpg" alt="avatar" class="img-responsive">
+                                </th>
+                            
+                            <th class="blue-color">
+                                <a href="http://mediapro.aamish.net/user/harry" target="_blank">
+                                    Harry Shirlow
+                                </a>
+                            </th>
+                            <th>Harry</th>
+                            <th>HarryShirlow@jourrapide.com</th>
+                            <th>2</th>
+                            <th>14-Sep-2018</th>
+                        </tr>
+                                            
+                        <tr>
+                                                            <th>
+                                    <img src="./Media Pro - Dashboard_files/default-avatar.jpg" alt="avatar" class="img-responsive">
+                                </th>
+                            
+                            <th class="blue-color">
+                                <a href="http://mediapro.aamish.net/user/jett" target="_blank">
+                                    Jett Foran
+                                </a>
+                            </th>
+                            <th>Jett</th>
+                            <th>JettForan@dayrep.com</th>
+                            <th>3</th>
+                            <th>14-Sep-2018</th>
+                        </tr>
+                                            
+                        <tr>
+                                                            <th>
+                                    <img src="./Media Pro - Dashboard_files/default-avatar.jpg" alt="avatar" class="img-responsive">
+                                </th>
+                            
+                            <th class="blue-color">
+                                <a href="http://mediapro.aamish.net/user/jasper" target="_blank">
+                                    Jasper Beasley
+                                </a>
+                            </th>
+                            <th>Jasper</th>
+                            <th>JasperBeasley@rhyta.com</th>
+                            <th>1</th>
+                            <th>14-Sep-2018</th>
+                        </tr>
+                                                                 </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="project-widget">
+                <div class="content-widget-title">
+                    Today's Searches
+                </div>
+                <div class="data-table">
+                    <table class="table table-bordered dashboard-table">
+                        <thead>
+                        <tr>
+                            <th><strong>Title</strong></th>
+                            <th><strong>IP</strong></th>
+                            <th><strong>Time</strong></th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>Title</th>
+                            <th>IP</th>
+                            <th>Time</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-center"> © copyright Media Pro 2018. All right reserved </footer>
+</div>
+<!--Main content end here-->
+
+<script src="./Media Pro - Dashboard_files/jquery.min.js.download"></script>
+<script src="./Media Pro - Dashboard_files/bootstrap.min.js.download"></script>
+<script src="./Media Pro - Dashboard_files/metisMenu.min.js.download"></script>
+<script src="./Media Pro - Dashboard_files/waves.min.js.download"></script>
+<!-- page scripts-->
+<script src="./Media Pro - Dashboard_files/ampcharts.min.js.download"></script>
+<script src="./Media Pro - Dashboard_files/chart.min.js.download"></script>
+<script src="./Media Pro - Dashboard_files/scrollbar.min.js.download"></script>
+<script src="./Media Pro - Dashboard_files/dataTables.min.js.download"></script>
+<script src="./Media Pro - Dashboard_files/custom.js.download"></script>
+    <script>
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        $(document).ready(function () {
+            var ctx1 = document.getElementById("chart1").getContext("2d");
+            var data1 = {
+                labels: ["06-04-20", "07-04-20", "08-04-20", "09-04-20", "10-04-20", "11-04-20", "12-04-20"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(19,218,100,0.8)",
+                        strokeColor: "#1890e8",
+                        pointColor: "rgba(19,45,254,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(19,45,254,1)",
+                        data: [0, 0, 0, 0, 0, 0, 0]
+                    },
+                ]
+            };
+
+            var chart1 = new Chart(ctx1).Line(data1, {
+                scaleShowGridLines : true,
+                scaleGridLineColor : "rgba(00,0,.05),",
+                scaleGridLineWidth : 1,
+                scaleShowHorizontalLines: true,
+                scaleShowVerticalLines: true,
+                bezierCurve : true,
+                bezierCurveTension : 0.4,
+                pointDot : true,
+                pointDotRadius : 4,
+                pointDotStrokeWidth : 1,
+                pointHitDetectionRadius : 2,
+                datasetStroke : true,
+                tooltipCornerRadius: 2,
+                datasetStrokeWidth : 7,
+                datasetFill : false,
+
+                responsive: true
+            });
+        });
+
+    </script>
+
+
+
+
+
+</body></html>
